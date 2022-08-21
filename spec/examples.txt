@@ -1,24 +1,29 @@
-example_id                                       | status  | run_time        |
------------------------------------------------- | ------- | --------------- |
-./spec/helpers/people_helper_spec.rb[1:1]        | pending | 0.00002 seconds |
-./spec/models/employment_spec.rb[1:1]            | passed  | 0.00379 seconds |
-./spec/models/employment_spec.rb[1:2]            | passed  | 0.02394 seconds |
-./spec/models/employment_spec.rb[1:3]            | passed  | 0.00691 seconds |
-./spec/models/employment_spec.rb[1:4]            | passed  | 0.00709 seconds |
-./spec/models/employment_spec.rb[1:5:1]          | passed  | 0.00164 seconds |
-./spec/models/employment_spec.rb[1:5:2]          | passed  | 0.00216 seconds |
-./spec/models/employment_spec.rb[1:5:3]          | passed  | 0.00192 seconds |
-./spec/models/employment_spec.rb[1:5:4]          | passed  | 0.00409 seconds |
-./spec/models/person_spec.rb[1:1]                | passed  | 0.00737 seconds |
-./spec/models/person_spec.rb[1:2]                | passed  | 0.00924 seconds |
-./spec/models/person_spec.rb[1:3]                | passed  | 0.00925 seconds |
-./spec/models/person_spec.rb[1:4]                | passed  | 0.00958 seconds |
-./spec/models/person_spec.rb[1:5]                | passed  | 0.0101 seconds  |
-./spec/models/person_spec.rb[1:6:1]              | passed  | 0.0019 seconds  |
-./spec/models/person_spec.rb[1:6:2]              | passed  | 0.00187 seconds |
-./spec/models/person_spec.rb[1:6:3]              | passed  | 0.00349 seconds |
-./spec/models/person_spec.rb[1:6:4]              | passed  | 0.00168 seconds |
-./spec/models/person_spec.rb[1:6:5]              | passed  | 0.00491 seconds |
-./spec/requests/people_spec.rb[1:1:1]            | passed  | 0.2875 seconds  |
-./spec/routing/people_spec.rb[1:1:1]             | passed  | 0.00203 seconds |
-./spec/views/people/index.html.slim_spec.rb[1:1] | pending | 0.00003 seconds |
+example_id                                | status  | run_time        |
+----------------------------------------- | ------- | --------------- |
+./spec/helpers/people_helper_spec.rb[1:1] | pending | 0.00003 seconds |
+./spec/models/employment_spec.rb[1:1]     | passed  | 0.00369 seconds |
+./spec/models/employment_spec.rb[1:2]     | passed  | 0.02918 seconds |
+./spec/models/employment_spec.rb[1:3]     | passed  | 0.00749 seconds |
+./spec/models/employment_spec.rb[1:4]     | passed  | 0.0069 seconds  |
+./spec/models/employment_spec.rb[1:5:1]   | passed  | 0.00172 seconds |
+./spec/models/employment_spec.rb[1:5:2]   | passed  | 0.0018 seconds  |
+./spec/models/employment_spec.rb[1:5:3]   | passed  | 0.00334 seconds |
+./spec/models/employment_spec.rb[1:5:4]   | passed  | 0.00517 seconds |
+./spec/models/person_spec.rb[1:1]         | passed  | 0.00166 seconds |
+./spec/models/person_spec.rb[1:2]         | passed  | 0.0095 seconds  |
+./spec/models/person_spec.rb[1:3]         | passed  | 0.00937 seconds |
+./spec/models/person_spec.rb[1:4]         | passed  | 0.00998 seconds |
+./spec/models/person_spec.rb[1:5]         | passed  | 0.0096 seconds  |
+./spec/models/person_spec.rb[1:6:1]       | passed  | 0.00183 seconds |
+./spec/models/person_spec.rb[1:6:2]       | passed  | 0.0017 seconds  |
+./spec/models/person_spec.rb[1:6:3]       | passed  | 0.00182 seconds |
+./spec/models/person_spec.rb[1:6:4]       | passed  | 0.00174 seconds |
+./spec/models/person_spec.rb[1:6:5]       | passed  | 0.00451 seconds |
+./spec/requests/people_spec.rb[1:1:1]     | passed  | 0.0179 seconds  |
+./spec/requests/people_spec.rb[1:2:1]     | passed  | 0.05544 seconds |
+./spec/requests/people_spec.rb[1:3:1]     | passed  | 0.2525 seconds  |
+./spec/requests/people_spec.rb[1:4:1:1]   | passed  | 0.01415 seconds |
+./spec/requests/people_spec.rb[1:4:1:2]   | passed  | 0.02369 seconds |
+./spec/requests/people_spec.rb[1:4:2:1]   | passed  | 0.02626 seconds |
+./spec/requests/people_spec.rb[1:4:2:2]   | passed  | 0.07114 seconds |
+./spec/routing/people_spec.rb[1:1:1]      | passed  | 0.05361 seconds |
