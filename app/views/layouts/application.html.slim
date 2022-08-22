@@ -9,6 +9,9 @@ html
     = stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload"
     = stylesheet_link_tag "application", "data-turbo-track": "reload"
     = javascript_importmap_tags
-  body
-    main.container.mx-auto.mt-28.px-5.flex
+    link rel="stylesheet" href="https://ga.jspm.io/npm:flatpickr@4.6.9/dist/flatpickr.min.css"
+  body.bg-gray-100
+    = render "shared/navbar"
+    main.container.mx-auto.mt-10.px-5
+      = turbo_frame_tag "modal"
       = yield

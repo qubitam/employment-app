@@ -1,0 +1,49 @@
+section
+  .max-w-screen-xl.px-4.py-6.mx-auto.sm:px-6.lg:px-8
+    .flex.flex-col.gap-4.mt-0.float-right.sm:flex-row.sm:mt-0.sm:items-center.py-0.sm:px-6.lg:px-8
+      = link_to "Add Personal Data", new_person_employment_path(@person), data: { turbo_frame: 'modal' }, class: "block px-5 py-3 text-sm font-medium text-white transition bg-indigo-600 rounded-lg hover:bg-indigo-700 focus:outline-none focus:ring" 
+    .grid.grid-cols-3.gap-4.w-full.md:grid-cols-3.lg:grid-cols-3.lg:items-stretch
+      .flex.items-center
+        .mx-auto.py-4.px-8.bg-white.rounded.w-full.text-center.lg:text-left
+          h3.text-md.font-bold
+            | Personal Data
+          hr.my-3
+          h4.text-md.font-md.py-2 
+            | First Name: 
+            = @person.first_name
+          h4.text-md.font-md.py-2
+            | Last Name: 
+            = @person.first_name
+          - if @person.nickname.present?
+            h4.text-md.font-md.py-2
+              | Nickname: 
+              = @person.nickname
+          h4.text-md.font-md.py-2
+            | Email: 
+            = @person.email
+          h4.text-md.font-md.py-2
+            | Phone Number: 
+            = @person.phone_number
+      .col-span-2.lg:col-span-2.lg:grid-cols-3.lg:py-4
+        .max-w-screen-xl.px-4.py-8.mx-auto.sm:py-6.sm:px-6.lg:px-8
+          .overflow-x-auto.border.border-gray-100.rounded
+            table.w-full.text-sm.divide-y.divide-gray-200.bg-white
+              thead
+                tr
+                  th.p-4.font-medium.text-left.text-gray-900.bg-gray-300.whitespace-nowrap
+                    .flex.items-center
+                      | Employer
+                  th.p-4.font-medium.text-left.text-gray-900.bg-gray-300.whitespace-nowrap
+                    .flex.items-center
+                      | Date Started
+                  th.p-4.font-medium.text-left.text-gray-900.bg-gray-300.whitespace-nowrap
+                    .flex.items-center
+                      | Date Ended
+                  th.p-4.font-medium.text-left.text-gray-900.bg-gray-300.whitespace-nowrap
+                    .flex.items-center
+                      | Actions
+              tbody.divide-y.divide-gray-100#employments
+                - @person.employments.each do |employment|
+                    == render employment
+
+                  

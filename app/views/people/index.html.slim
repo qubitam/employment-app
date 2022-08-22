@@ -1,2 +1,38 @@
-h1 People#index
-p Find me in app/views/people/index.html.slim
+header
+  .max-w-screen-xl.px-4.py-6.mx-auto.sm:py-6.sm:px-6.lg:px-6
+    .sm:justify-between.sm:items-center.sm:flex
+      .text-center.sm:text-left
+        h1.text-2xl.font-bold.text-gray-900.sm:text-3xl
+          | Empoyement Management
+        p.text-sm.text-gray-500 class="mt-1.5" 
+          | Manage People and Their Employement History!
+      .flex.flex-col.gap-4.mt-4.sm:flex-row.sm:mt-0.sm:items-center
+        = link_to "Add Personal Data", new_person_path, data: { turbo_frame: 'modal' }, class: "block px-5 py-3 text-sm font-medium text-white transition bg-indigo-600 rounded-lg hover:bg-indigo-700 focus:outline-none focus:ring" 
+
+.max-w-screen-xl.px-4.py-8.mx-auto.sm:py-12.sm:px-6.lg:px-8
+  .overflow-x-auto.border.border-gray-100.rounded
+    table.min-w-full.text-sm.divide-y.divide-gray-200.bg-white
+      thead
+        tr
+          th.p-4.font-medium.text-left.text-gray-900.bg-gray-300.whitespace-nowrap
+            .flex.items-center
+              | First Name
+          th.p-4.font-medium.text-left.text-gray-900.bg-gray-300.whitespace-nowrap
+            .flex.items-center
+              | Last Name
+          th.p-4.font-medium.text-left.text-gray-900.bg-gray-300.whitespace-nowrap
+            .flex.items-center
+              | Email Address
+          th.p-4.font-medium.text-left.text-gray-900.bg-gray-300.whitespace-nowrap
+            .flex.items-center
+              | Phone Number
+          th.p-4.font-medium.text-left.text-gray-900.bg-gray-300.whitespace-nowrap
+            .flex.items-center
+              | Nickname
+          th.p-4.font-medium.text-left.text-gray-900.bg-gray-300.whitespace-nowrap
+            .flex.items-center
+              | Actions
+      tbody.divide-y.divide-gray-100#people
+        - @people.each do |person|
+            == render person
+

@@ -1,0 +1,12 @@
+
+tr
+  td.p-4.font-medium.text-gray-900.whitespace-nowrap
+    = person.first_name
+  td.p-4.text-gray-700.whitespace-nowrap = person.last_name
+  td.p-4.text-gray-700.whitespace-nowrap = person.email
+  td.p-4.text-gray-700.whitespace-nowrap = person.phone_number
+  td.p-4.text-gray-700.whitespace-nowrap = person.nickname
+  td.p-4.text-gray-700.whitespace-nowrap
+    = link_to "Add Employement", new_person_employment_path(person), data: { turbo_frame: 'modal' }, class: "inline-block px-4 py-2 mr-3 text-sm font-medium text-indigo-600 transition border border-current rounded hover:scale-110 hover:shadow-xl active:text-indigo-500 focus:outline-none focus:ring"
+    = link_to "Show", person_path(person), class: "inline-block px-4 py-2 text-sm font-medium text-white transition bg-indigo-600 rounded hover:scale-110 hover:shadow-xl active:bg-indigo-500 focus:outline-none focus:ring"
+

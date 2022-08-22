@@ -23,6 +23,8 @@ class PeopleController < ApplicationController
 
     respond_to do |format|
       if @person.save
+        format.turbo_stream { render turbo_stream: turbo_stream.prepend('people', partial: 'people/person', locals: {person: @person}) }
+
         format.html { redirect_to person_url(@person), notice: "Person was successfully created." }
         format.json { render :show, status: :created, location: @person }
       else

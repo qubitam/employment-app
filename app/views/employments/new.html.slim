@@ -1,12 +1,12 @@
-=turbo_frame_tag "modal", class: "w-2/5" do 	
+=turbo_frame_tag "modal" do 	
 	=tag.div data: { controller: "modal",
                       modal_target: "modal",
                       action: "turbo:submit-end->modal#submitEnd keyup@window->modal#closeWithKeyboard click@window->modal#closeBackground" },
-                      class: "animated fadeIn fixed inset-0 overflow-y-auto flex items-center justify-center fixed z-40 w-screen h-screen inset-0 bg-gray-900 bg-opacity-60"
+                      class: "animated fadeIn fixed inset-0 overflow-y-auto flex items-center justify-center fixed z-40 w-screen h-screen inset-0 bg-gray-900 bg-opacity-60", style: "z-index: 9999;"
 		.max-w-screen-xl.max-h-screen.relative.px-4.py-8.mx-auto.sm:py-12.sm:px-6.lg:px-8
 			.m-1.bg-white.rounded.shadow
 				header
 					.px-4.py-5.border-gray-200.sm:px-6
 						h1.text-2xl.font-bold.text-gray-900.sm:text-3xl
-							| New Personal Data
-				== render "form", person: @person, person: @person, employment: @employment
+							| New Employment
+				== render "form", person: @person, employment: @employment
