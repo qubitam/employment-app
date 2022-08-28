@@ -11,7 +11,7 @@ class EmploymentsController < ApplicationController
 			if @employment.save
 				format.turbo_stream { render turbo_stream: turbo_stream.prepend('employments', partial: 'employments/employment', locals: {employment: @employment}) }
 
-        format.html { redirect_to person_url(@person), notice: "Person was successfully created." }
+        format.html { redirect_to person_url(@person), notice: "Employment was successfully created." }
         format.json { render :show, status: :created, location: @person }
       else
         format.html { render :new, status: :unprocessable_entity }

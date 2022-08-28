@@ -1,22 +1,22 @@
-section.bg-gray-100.rounded.mb-5
+section.bg-gray-100.rounded.mb-5[data-controller="validate-employment"]
   .max-w-screen-xl.px-4.py-10.mx-auto.sm:px-6.lg:px-8
     = form_with model: [person, employment], id: "employment#{employment.new_record? ? "new" : employment.id}" do |form|
       - if @employment.errors.any?
-          div style="color: red"
+          div.w-full style="color: red"
             h2 = "#{pluralize(@employment.errors.count, "error")} prohibited this employment from being saved:"
-            ul
+            ul.w-full
               - @employment.errors.each do |error|
                 li = error.full_message
       div
         = form.label :employer
-        = form.text_field :employer, class: "w-full p-3 text-sm border-gray-200 rounded-lg"
+        = form.text_field :employer, class: "w-full p-3 text-sm border-gray-200 rounded-lg", "data-validate-employment-target": "input", data: { action: "input->validate-employment#validateInputs"  }
       .grid.grid-cols-1.gap-4.sm:grid-cols-2
         div
           = form.label :date_started
-          = form.text_field :date_started, class: "w-full p-3 text-sm border-gray-200 rounded-lg", data: { controller: "flatpickr" }
+          = form.text_field :date_started, class: "w-full p-3 text-sm border-gray-200 rounded-lg", "data-validate-employment-target": "input", data: { controller: "flatpickr", flatpickr_date_format: "Y/m/d", action: "input->validate-employment#validateInputs"  }
         div
           = form.label :date_ended
-          = form.text_field :date_ended, class: "w-full p-3 text-sm border-gray-200 rounded-lg", data: { controller: "flatpickr" }
+          = form.text_field :date_ended, class: "w-full p-3 text-sm border-gray-200 rounded-lg", "data-validate-employment-target": "input", data: { controller: "flatpickr", flatpickr_allow_input: true, flatpickr_date_format: "Y/m/d", action: "input->validate-employment#validateInputs"  }
       .mt-4
         = button_tag "Close", data: { action: "modal#hideModal" }, type: "button", class: "rounded-lg py-3 px-5 bg-red-600 text-white mr-3"
-        = form.submit "Save", class: "inline-flex items-center justify-center w-full px-5 py-3 text-white bg-black rounded-lg sm:w-auto"
+        = form.submit "Save", "data-validate-employment-target": "submitEmployment", class: "inline-flex items-center justify-center w-full px-5 py-3 text-white rounded-lg sm:w-auto"

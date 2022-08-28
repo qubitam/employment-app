@@ -1,4 +1,4 @@
-section.bg-gray-100.rounded.mb-5
+section.bg-gray-100.rounded.mb-5[data-controller="validation"]
   .max-w-screen-xl.px-4.py-10.mx-auto.sm:px-6.lg:px-8
     = form_with(model: @person, class: "space-y-5") do |form|
       - if @person.errors.any?
@@ -19,10 +19,11 @@ section.bg-gray-100.rounded.mb-5
         = form.text_field :nickname, class: "w-full p-3 text-sm border-gray-200 rounded-lg"
       div
         = form.label :email
-        = form.text_field :email, class: "w-full p-3 text-sm border-gray-200 rounded-lg"
+        = form.text_field :email, "data-validation-target": "email", data: { action: "change->validation#validateEmail" }, class: "w-full p-3 text-sm border-gray-200 rounded-lg"
+        span.text-red-600.hidden[data-validation-target="error"] please enter a valid email
       div
         = form.label :phone_number
-        = form.text_field :phone_number, class: "w-full p-3 text-sm border-gray-200 rounded-lg"
+        = form.text_field :phone_number, class: "w-full p-3 text-sm border-gray-200 rounded-lg", "data-validation-target": "phone"
 
       .mt-4
         = button_tag "Close", data: { action: "modal#hideModal" }, type: "button", class: "rounded-lg py-3 px-5 bg-red-600 text-white mr-3"
