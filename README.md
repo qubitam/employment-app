@@ -13,5 +13,8 @@ Things you may want to cover:
 * and then : rails db:migrate
 
 * start the server : bin/dev
+* to run tests run : rspec 
+
+Note : Didn't cover all tests
 
 
